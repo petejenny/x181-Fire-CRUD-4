@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>511051694740-25bvd5dc9103sq1t6j9684igi0sttebp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.511051694740-25bvd5dc9103sq1t6j9684igi0sttebp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBuIYcwr_N7tm9yGWw2DjWX9R7m7qCmy0o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>511051694740</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fastpeter.x181-Fire-CRUD-4</string>
+	<key>PROJECT_ID</key>
+	<string>x181-fire-crud</string>
+	<key>STORAGE_BUCKET</key>
+	<string>x181-fire-crud.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:511051694740:ios:6372b11ff0e21b90</string>
+	<key>DATABASE_URL</key>
+	<string>https://x181-fire-crud.firebaseio.com</string>
+</dict>
+</plist>

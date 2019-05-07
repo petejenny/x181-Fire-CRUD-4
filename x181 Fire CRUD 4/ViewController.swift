@@ -12,24 +12,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var myDesserts = [String]()
+    //var myDesserts = [String]()
+    var users = [User]()
     
     @IBAction func onAddTapped(_ sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "Add Dessert", message: nil, preferredStyle: .alert)
-        
-        alert.addTextField { (dessertTF) in
-            dessertTF.placeholder = "Enter Dessert"
+        AlertService.addUser(in: self) { user in
+            print("Added User: \(user)")
+            self.users.append(user)
         }
         
-        let action = UIAlertAction(title: "add", style: .default) { (_) in
-            guard let dessert = alert.textFields?.first?.text else { return }
-            print(dessert)
-            self.add(dessert)
-            
-        }
-        alert.addAction(action)
-        present(alert, animated: true)
+        
     }
     
     
@@ -37,66 +30,50 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //tableView.dataSource = x
+        
+        MyFireService.shared.create()
+        
+        //FirestoreDbService.shared.update()
+
+        //MyFireService.shared.delete()
     }
     
-    func add(_ dessert: String) {
-        print("Add dessert=\(dessert)")
-        let index = 0
-        
-        // Add value to array
-        myDesserts.insert(dessert, at: index)
-        print("desserts size=\(myDesserts.count)")
-        
-        // Insert new row
-        let indexPath = IndexPath(row: index, section: 0)
-        //tableView.beginUpdates()
-        print("InsertRows")
-        //tableView.reloadData()
-        tableView.insertRows(at: [indexPath], with: .left)
-        //tableView.insertRows(at: [IndexPath(row: desserts.count-1, section: 0)], with: .left)
-        
-        //tableView.endUpdates()
-        
-    }
+
 }
 
 extension ViewController: UITableViewDataSource {
+    // Number of Sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Number of Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myDesserts.count
+        return users.count
     }
     
+    // Cell for row at index path
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Get cell at IndexPath.row==\(indexPath.row)")
-        let cell = UITableViewCell()
-        let dessert = myDesserts[indexPath.row]
-        cell.textLabel?.text = dessert
-        return cell
-        
-        /*
-        let cellIdentifier = "MealTableViewCell"
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell else {
-            fatalError("The dequeue cell is not an instancer of MealTableViewCell.")
-        }
-        
-        // Fetches the appropiate meal for the data source layout.
-        let meal = meals[indexPath.row]
-        
-        cell.nameLabel.text = meal.name
-        cell.photoImageView.image = meal.photo
-        cell.ratingControl.rating = meal.rating
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier:nil)
+        let user = users[indexPath.row]
+        cell.textLabel?.text = user.name
+        cell.detailTextLabel?.text = String(user.age)
         
         return cell
-        */
     }
+  
+    // Edit cell
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        AlertService.updateUser(in: self) {
+//
+//        }
+//    }
     
+    // Delete cell
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else {return}
-        myDesserts.remove(at: indexPath.row)
+        users.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     

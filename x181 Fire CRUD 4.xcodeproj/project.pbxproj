@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9BCC33AACB4347E6E19FFC /* Pods_x181_Fire_CRUD_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DFAD9090DB3DA4AEB4400D /* Pods_x181_Fire_CRUD_4.framework */; };
 		6A0D9D452280BF1F00D6EF74 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D9D442280BF1F00D6EF74 /* AlertService.swift */; };
+		6A0D9D472280FD3700D6EF74 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D9D462280FD3700D6EF74 /* Users.swift */; };
+		6A0D9D492282145500D6EF74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A0D9D482282145500D6EF74 /* GoogleService-Info.plist */; };
 		6A141DCB227E11A7008D4BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A141DCA227E11A7008D4BD8 /* AppDelegate.swift */; };
 		6A141DCD227E11A7008D4BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A141DCC227E11A7008D4BD8 /* ViewController.swift */; };
 		6A141DD0227E11A7008D4BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A141DCE227E11A7008D4BD8 /* Main.storyboard */; };
 		6A141DD2227E11A8008D4BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A141DD1227E11A8008D4BD8 /* Assets.xcassets */; };
 		6A141DD5227E11A8008D4BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A141DD3227E11A8008D4BD8 /* LaunchScreen.storyboard */; };
+		6A6BCB5B22821B620037F629 /* MyFireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BCB5A22821B620037F629 /* MyFireService.swift */; };
+		6A6BCB5D228240160037F629 /* MyFireCollectionRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BCB5C228240160037F629 /* MyFireCollectionRef.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A0D9D442280BF1F00D6EF74 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		6A0D9D462280FD3700D6EF74 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		6A0D9D482282145500D6EF74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A141DC7227E11A7008D4BD8 /* x181 Fire CRUD 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "x181 Fire CRUD 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A141DCA227E11A7008D4BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A141DCC227E11A7008D4BD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,11 @@
 		6A141DD1227E11A8008D4BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A141DD4227E11A8008D4BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A141DD6227E11A8008D4BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A6BCB5A22821B620037F629 /* MyFireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFireService.swift; sourceTree = "<group>"; };
+		6A6BCB5C228240160037F629 /* MyFireCollectionRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFireCollectionRef.swift; sourceTree = "<group>"; };
+		747AB72035409CF8F6D4EF7D /* Pods-x181 Fire CRUD 4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-x181 Fire CRUD 4.release.xcconfig"; path = "Target Support Files/Pods-x181 Fire CRUD 4/Pods-x181 Fire CRUD 4.release.xcconfig"; sourceTree = "<group>"; };
+		A1DFAD9090DB3DA4AEB4400D /* Pods_x181_Fire_CRUD_4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_x181_Fire_CRUD_4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4A370C3DAD1504F9E8CF7A /* Pods-x181 Fire CRUD 4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-x181 Fire CRUD 4.debug.xcconfig"; path = "Target Support Files/Pods-x181 Fire CRUD 4/Pods-x181 Fire CRUD 4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9BCC33AACB4347E6E19FFC /* Pods_x181_Fire_CRUD_4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D1CCA78C27596C55856B4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A370C3DAD1504F9E8CF7A /* Pods-x181 Fire CRUD 4.debug.xcconfig */,
+				747AB72035409CF8F6D4EF7D /* Pods-x181 Fire CRUD 4.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6A141DBE227E11A7008D4BD8 = {
 			isa = PBXGroup;
 			children = (
 				6A141DC9227E11A7008D4BD8 /* x181 Fire CRUD 4 */,
 				6A141DC8227E11A7008D4BD8 /* Products */,
+				18D1CCA78C27596C55856B4A /* Pods */,
+				EB80F9F51FAC9DC5D671F4C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,27 @@
 		6A141DC9227E11A7008D4BD8 /* x181 Fire CRUD 4 */ = {
 			isa = PBXGroup;
 			children = (
+				6A0D9D482282145500D6EF74 /* GoogleService-Info.plist */,
 				6A141DCA227E11A7008D4BD8 /* AppDelegate.swift */,
 				6A141DCC227E11A7008D4BD8 /* ViewController.swift */,
+				6A0D9D462280FD3700D6EF74 /* Users.swift */,
 				6A0D9D442280BF1F00D6EF74 /* AlertService.swift */,
 				6A141DCE227E11A7008D4BD8 /* Main.storyboard */,
 				6A141DD1227E11A8008D4BD8 /* Assets.xcassets */,
 				6A141DD3227E11A8008D4BD8 /* LaunchScreen.storyboard */,
 				6A141DD6227E11A8008D4BD8 /* Info.plist */,
+				6A6BCB5A22821B620037F629 /* MyFireService.swift */,
+				6A6BCB5C228240160037F629 /* MyFireCollectionRef.swift */,
 			);
 			path = "x181 Fire CRUD 4";
+			sourceTree = "<group>";
+		};
+		EB80F9F51FAC9DC5D671F4C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1DFAD9090DB3DA4AEB4400D /* Pods_x181_Fire_CRUD_4.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A141DD9227E11A8008D4BD8 /* Build configuration list for PBXNativeTarget "x181 Fire CRUD 4" */;
 			buildPhases = (
+				27E229EB77C8617B5745518E /* [CP] Check Pods Manifest.lock */,
 				6A141DC3227E11A7008D4BD8 /* Sources */,
 				6A141DC4227E11A7008D4BD8 /* Frameworks */,
 				6A141DC5227E11A7008D4BD8 /* Resources */,
+				73D494EAB79A7DD309D5DD47 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A141DD5227E11A8008D4BD8 /* LaunchScreen.storyboard in Resources */,
+				6A0D9D492282145500D6EF74 /* GoogleService-Info.plist in Resources */,
 				6A141DD2227E11A8008D4BD8 /* Assets.xcassets in Resources */,
 				6A141DD0227E11A7008D4BD8 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +172,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27E229EB77C8617B5745518E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-x181 Fire CRUD 4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73D494EAB79A7DD309D5DD47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-x181 Fire CRUD 4/Pods-x181 Fire CRUD 4-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-x181 Fire CRUD 4/Pods-x181 Fire CRUD 4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A141DC3227E11A7008D4BD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0D9D472280FD3700D6EF74 /* Users.swift in Sources */,
 				6A141DCD227E11A7008D4BD8 /* ViewController.swift in Sources */,
 				6A0D9D452280BF1F00D6EF74 /* AlertService.swift in Sources */,
+				6A6BCB5D228240160037F629 /* MyFireCollectionRef.swift in Sources */,
 				6A141DCB227E11A7008D4BD8 /* AppDelegate.swift in Sources */,
+				6A6BCB5B22821B620037F629 /* MyFireService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +385,7 @@
 		};
 		6A141DDA227E11A8008D4BD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA4A370C3DAD1504F9E8CF7A /* Pods-x181 Fire CRUD 4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +404,7 @@
 		};
 		6A141DDB227E11A8008D4BD8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 747AB72035409CF8F6D4EF7D /* Pods-x181 Fire CRUD 4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

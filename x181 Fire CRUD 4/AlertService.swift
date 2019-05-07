@@ -13,7 +13,7 @@ class AlertService {
         
     }
     
-    static func addUser(in vc: UIViewController, completion: @escaping () -> Void) {
+    static func addUser(in vc: UIViewController, completion: @escaping (User) -> Void) {
         let alert = UIAlertController(title: "Add User", message: nil, preferredStyle: .alert)
         alert.addTextField {(nameTF) in
             nameTF.placeholder = "Name"
@@ -30,25 +30,33 @@ class AlertService {
                 else {return}
             print("Name=\(name)")
             print("Age=\(age)")
+            let user = User(name: name, age: age)
+            completion(user)
         }
         alert.addAction(add)
         vc.present(alert, animated: true)
     }
     
-    static func updateUser(in vc: UIViewController, completion: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Update User", message: nil, preferredStyle: .alert)
+    static func updateUser(_ user: User,in vc: UIViewController, completion: @escaping (User) -> Void) {
+        let alert = UIAlertController(title: "Update User \(user.name)", message: nil, preferredStyle: .alert)
         alert.addTextField {(ageTF) in
             ageTF.placeholder = "Age"
             ageTF.keyboardType = .numberPad
+            ageTF.text = String(user.age)
         }
-        let add = UIAlertAction(title: "Add", style: .default) { _ in
+        let update = UIAlertAction(title: "Add", style: .default) { _ in
             guard
                 let ageString = alert.textFields?.last?.text,
                 let age = Int(ageString)
                 else {return}
+            
+            var updatedUser = user
+            updatedUser.age = age
+            
             print("Age=\(age)")
+            completion(updatedUser)
         }
-        alert.addAction(add)
+        alert.addAction(update)
         vc.present(alert, animated: true)
     }
 }
