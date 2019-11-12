@@ -11,9 +11,8 @@ import Firebase
 
 class MyFireService {
     private init() {}
+    
     static let shared = MyFireService()
-    
-    
     
     func configure() {
         FirebaseApp.configure()
@@ -26,12 +25,18 @@ class MyFireService {
     func create() {
         
         let userEntry: [String: Any] = ["name": "Joe",
-                         "age": 52]
-        
-        
+                                        "age": 52]
         //let userReference = Firestore.firestore().collection("users")
-        
         reference(to: .users).addDocument(data: userEntry)
+    }
+    
+    func myCreate<T: Codable>(for encodableObject: T, in collectionReference: MyFireCollectionRef) {
+        do {
+            let json = try encodableObject.toJson(excluding: ["id"])
+            reference(to: collectionReference).addDocument(data: json)
+        } catch {
+            print(error)
+        }
         
         
     }
@@ -44,9 +49,30 @@ class MyFireService {
             for document in snapshot.documents {
                 print(document.data())
             }
-            
         }
+    }
+    
+    
+    func myRead<T: Decodable>(from collectionReference: MyFireCollectionRef, returning objectType: T.Type, completion: @escaping ([T]) -> Void) {
         
+        reference(to: collectionReference).addSnapshotListener { (snapshot, _) in
+            
+            guard let snapshot = snapshot else {return}
+            
+            do {
+                
+                var objects = [T]()
+                for document in snapshot.documents {
+                    let object = try document.decode(as: objectType.self)
+                    objects.append(object)
+                }
+                
+                completion(objects)
+                
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func update() {
@@ -55,13 +81,35 @@ class MyFireService {
         
     }
     
+    func myUpdate<T: Encodable & IdentifiableFirestoreDocId>(for encodableObject: T, in collectionReference: MyFireCollectionRef) {
+        do {
+            
+            let json = try encodableObject.toJson(excluding: ["id"])
+            guard let id = encodableObject.id else {
+                throw MyError.encodingError
+            }
+            reference(to: collectionReference).document(id).setData(json)
+            
+        } catch {
+            print(error)
+        }
+    }
+    
     func delete() {
-
+        
         let userReference = Firestore.firestore().collection("users")
-        
         userReference.document("aDeXNsNXlbsEb4Uh9yaX").delete()
-
         
+    }
+    
+    func myDelete<T: IdentifiableFirestoreDocId>(_ identifiableObject: T, in collectionReference: MyFireCollectionRef) {
+        do {
+            guard let id = identifiableObject.id else {throw MyError.encodingError}
+            
+            reference(to: collectionReference).document(id).delete()
+        } catch {
+            print(error)
+        }
     }
     
 }

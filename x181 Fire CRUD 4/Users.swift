@@ -8,8 +8,12 @@
 
 import Foundation
 
+protocol IdentifiableFirestoreDocId {
+    var id: String? {get set}
+}
+
 // User object
-struct User {
+struct User: Codable, IdentifiableFirestoreDocId {
     var id: String? = nil // default value nil
     let name: String
     var age: Int

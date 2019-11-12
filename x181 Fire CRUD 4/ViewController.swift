@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     //var myDesserts = [String]()
@@ -18,8 +18,9 @@ class ViewController: UIViewController {
     @IBAction func onAddTapped(_ sender: UIBarButtonItem) {
         
         AlertService.addUser(in: self) { user in
-            print("Added User: \(user)")
-            self.users.append(user)
+            //print("Added User: \(user)")
+            //self.users.append(user)
+            MyFireService.shared.myCreate(for: user, in: .users)
         }
         
         
@@ -31,14 +32,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //tableView.dataSource = x
         
-        MyFireService.shared.create()
+        //MyFireService.shared.create()
         
         //FirestoreDbService.shared.update()
-
+        
         //MyFireService.shared.delete()
+        //let trumpy = User(name: "Trump", age: 70)
+        //MyFireService.shared.fireCreate(for: trumpy, in: .users)
+        
+        print("tableView.allowsSelection=\(tableView.allowsSelection)")
+        print("allowsSelectionDuringEditing=\(tableView.allowsSelectionDuringEditing)")
+        MyFireService.shared.myRead(from: .users, returning: User.self) { (users) in
+            self.users = users
+            self.tableView.reloadData()
+        }
     }
-    
-
 }
 
 extension ViewController: UITableViewDataSource {
@@ -62,19 +70,30 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-  
-    // Edit cell
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        AlertService.updateUser(in: self) {
-//
-//        }
+    
+    // Override to support conditional editing of the table view.
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        // Return false if you do not want the specified item to be editable.
+//        return true
 //    }
+    
+    //Edit cell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        AlertService.updateUser(user, in: self) { updatedUser in
+            print(updatedUser)
+            MyFireService.shared.myUpdate(for: updatedUser, in: .users)
+        }
+    }
     
     // Delete cell
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else {return}
-        users.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
+        //users.remove(at: indexPath.row)
+        //tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        let user = users[indexPath.row]
+        MyFireService.shared.myDelete(user, in: .users)
     }
     
 }
